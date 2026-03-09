@@ -3,8 +3,11 @@ import React from 'react'
 const page = () => {
   return (
     <div className='py-25'>
+      {/* Container */}
       <div className="max-w-352.5 mx-auto">
+        {/* Header */}
         <h3 className='text-[35px] text-[#222222] font-bold leading-12.5'>CART</h3>
+        {/* Top Slider */}
         <div className="flex items-center py-12.5">
           <div className="border-b-2 border-[#222222] pb-3 w-117.5">
             <div className="flex items-center gap-x-2.5 text-lg text-[#222222] font-medium leading-6.5">
