@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const page = () => {
@@ -34,6 +35,19 @@ const page = () => {
           </div>
         </div>
         {/* Add Content */}
+        <div className="flex justify-between">
+          <div className="">
+            <div className="flex items-center pb-2.5 border-b-2 border-[#E4E4E4] text-[#222222] text-sm font-medium leading-6">
+              <h6 className='pr-[427px]'>PRODUCT</h6>
+              <h6 className='pr-[91px]'>PRICE</h6>
+              <h6 className='pr-[99px]'>QUANTITY</h6>
+              <h6 className='pr-[78px]'>SUBTOTAL</h6>
+            </div>
+            <div className="mt-7.5 border-b border-[#E4E4E4] pb-7.5 flex items-center">
+              <Image src="/images/cart.png" alt="cart" width={120} height={120} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
