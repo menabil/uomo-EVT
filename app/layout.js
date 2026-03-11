@@ -1,12 +1,10 @@
-// app/layout.jsx
-
 import { Jost } from "next/font/google";
 import "./globals.css";
-
+// Fonts
 const jost = Jost({
   subsets: ["latin"],
   variable: "--font-jost",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // সব ওয়েট চাইলে এটা রাখো, না হলে কমাও (যেমন: "400", "700")
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
