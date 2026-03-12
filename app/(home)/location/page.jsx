@@ -2,7 +2,15 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <>
+    <section>
+      <div className="max-w-352">
+        <div className="">
+
+        </div>
+      </div>
+    </section>
+    </>
   )
 }
 
