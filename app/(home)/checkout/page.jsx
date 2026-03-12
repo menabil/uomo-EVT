@@ -40,6 +40,7 @@ const page = () => {
             </p>
           </div>
         </div>
+        
         {/* Content */}
         <div className="flex items-start">
           <div className="">
