@@ -163,7 +163,7 @@ const Navbar = () => {
   const currencies = ["USD", "EUR", "BDT"];
 
   return (
-    <nav className="overflow-x-clip sticky top-0 z-50 bg-white">
+    <nav className="overflow-x-clip sticky top-0 z-999 bg-white">
       <Container
         className={`h-14 sm:h-auto md:py-5 2xl:py-7.5 flex items-center justify-between`}
       >
