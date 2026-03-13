@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <>
+      <section>
+        <div className="">
+          {/* Login part */}
+          <div className=""></div>
+          {/* Register Part */}
+          <div className=""></div>
+        </div>
+      </section>
+    </>
+  );
+};
 
-export default page
+export default page;
