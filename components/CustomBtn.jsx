@@ -9,11 +9,11 @@ const CustomInput = ({
   placeholder = "",
   required = false,
   error = "",
-  children, // Optional icon or element inside input
-  className = "", // Extra Tailwind classes
+  children, 
+  className = "",
 }) => {
   return (
-    <div className={`relative font-sans my-4 w-full ${className}`}>
+    <div className={`relative my-4 w-full ${className}`}>
       <input
         type={type}
         name={name}
@@ -21,7 +21,7 @@ const CustomInput = ({
         onChange={onChange}
         placeholder={placeholder || " "}
         required={required}
-        className={`peer w-full rounded-[20px] border-2 border-gray-300 bg-transparent px-4 py-3 text-base outline-none
+        className={`peer w-full rounded-sm border-2 border-gray-300 bg-transparent px-4 py-3 text-base outline-none
           focus:border-primary transition-all duration-300`}
       />
 

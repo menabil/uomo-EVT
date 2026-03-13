@@ -311,8 +311,11 @@ const Navbar = () => {
           </div>
         </div>
       </Container>
+
       <div className="mobile sm:hidden absolute top-16 h-[calc(100vh-4rem)] w-full px-2 z-999">
-       <CustomBtn label="search products..." />
+        <CustomBtn label="search products..." name={"search"}>
+          <Search className="absolute right-0 top-1/2 -translate-1/2" />
+        </CustomBtn>
         <Accordion
           type="single"
           collapsible
