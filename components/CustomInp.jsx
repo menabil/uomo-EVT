@@ -13,7 +13,7 @@ const CustomInp = ({
   className = "",
 }) => {
   return (
-    <div className={`relative my-4 w-full ${className}`}>
+    <div className={`relative w-full ${className}`}>
       <input
         type={type}
         name={name}

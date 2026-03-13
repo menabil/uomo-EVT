@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Container from "./Container";
 import logo from "@/public/images/logo.png";
 import Link from "next/link";
@@ -13,7 +14,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FaFacebookF } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaPinterest,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { Search, User } from "lucide-react";
 import CustomInput from "./CustomInp";
 
@@ -29,6 +36,8 @@ export const NavLinks = ({ title, link, className, children }) => {
 };
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   const mobileMenus = [
     {
       title: "home",
@@ -36,7 +45,7 @@ const Navbar = () => {
     },
     {
       title: "shop",
-      subMenus: ["shop grid", "shop list", "product detail"],
+      subMenus: ["shop main", "shop list", "product detail"],
     },
     {
       title: "collection",
@@ -55,7 +64,6 @@ const Navbar = () => {
       subMenus: ["about us", "contact us", "faq", "store location", "404 page"],
     },
   ];
-
   const subMenusHome = [
     {
       title: "shop pages",
@@ -145,13 +153,24 @@ const Navbar = () => {
       subMenus: ["simple", "image background"],
     },
   ];
+  const languages = [
+    "United Kingdom | English",
+    "United States | English",
+    "Bangla | বাংলা",
+    "Arabic | العربية",
+    "Urdu | اردو",
+  ];
+  const currencies = ["USD", "EUR", "BDT"];
 
   return (
-    <nav>
+    <nav className="overflow-x-clip">
       <Container
         className={`h-14 sm:h-auto md:py-5 2xl:py-7.5 flex items-center justify-between`}
       >
-        <div className="menu sm:hidden text-2xl ">
+        <div
+          onClick={() => setOpen(!open)}
+          className="menu sm:hidden text-2xl "
+        >
           <HiOutlineBars3CenterLeft />
         </div>
         <div className="main flex items-center gap-6 xl:gap-x-14">
@@ -277,7 +296,10 @@ const Navbar = () => {
         </div>
       </Container>
 
-      <div className="mobile sm:hidden absolute top-16 h-[calc(100vh-4rem)] w-full px-2 z-999 bg-white flex flex-col gap-y-4">
+      <div
+        className={`mobile sm:hidden absolute top-12 h-[calc(100dvh-3rem)] w-full px-5 z-999 bg-white flex flex-col pb-5 
+      ${open ? "translate-x-0" : "-translate-x-full"} transition-all duration-300`}
+      >
         <CustomInput label="search products..." name={"search"}>
           <Search className="absolute right-0 top-1/2 -translate-1/2" />
         </CustomInput>
@@ -317,14 +339,47 @@ const Navbar = () => {
           ))}
         </Accordion>
         <div className="flex-1 flex flex-col gap-y-3.5 justify-end">
-          <div className="myAccount flex items-center gap-x-3.5">
+          <div className="myAccount flex items-center gap-x-3.5 uppercase">
             <User />{" "}
             <h1 className="text-primary text-sm font-medium">my account</h1>
           </div>
-          <div className="language"></div>
-          <div className="currency"></div>
-          <div className="social">
-            <FaFacebookF />
+          <div className="language flex items-center gap-x-7 capitalize">
+            <h2 className="text-sm text-secondary ">language</h2>
+            <select
+              name="language"
+              id="language"
+              className="outline-none text-sm text-primary "
+            >
+              {languages.map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="currency capitalize flex items-center gap-x-7">
+            <h2>currency</h2>
+            <select
+              name="currency"
+              id="currency"
+              className="outline-none text-sm text-primary "
+            >
+              {currencies.map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="social flex items-center gap-9 ">
+            {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterest].map(
+              (Icon, index) => (
+                <Icon
+                  key={index}
+                  className="text-xl text-secondary hover:text-primary duration-300"
+                />
+              ),
+            )}
           </div>
         </div>
       </div>
