@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomInput = ({
+const CustomInp = ({
   label = "Label",
   type = "text",
   name,
@@ -51,4 +51,4 @@ const CustomInput = ({
   );
 };
 
-export default CustomInput;
+export default CustomInp;

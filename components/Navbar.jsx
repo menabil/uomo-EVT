@@ -13,13 +13,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group";
-import { Search } from "lucide-react";
-import CustomBtn from "./CustomBtn";
+import { FaFacebookF } from "react-icons/fa";
+import { Search, User } from "lucide-react";
+import CustomInput from "./CustomInp";
 
 export const NavLinks = ({ title, link, className, children }) => {
   return (
@@ -36,53 +32,23 @@ const Navbar = () => {
   const mobileMenus = [
     {
       title: "home",
-      subMenus: [
-        "default",
-        "home fashion",
-        "home minimal",
-        "home modern",
-        "home parallax",
-      ],
+      subMenus: ["default", "home minimal", "home modern"],
     },
     {
       title: "shop",
-      subMenus: [
-        "shop grid",
-        "shop list",
-        "shop left sidebar",
-        "shop right sidebar",
-        "product detail",
-      ],
+      subMenus: ["shop grid", "shop list", "product detail"],
     },
     {
       title: "collection",
-      subMenus: [
-        "new arrivals",
-        "best sellers",
-        "summer collection",
-        "winter collection",
-        "limited edition",
-      ],
+      subMenus: ["new arrivals", "best sellers", "limited edition"],
     },
     {
       title: "journal",
-      subMenus: [
-        "blog default",
-        "blog grid",
-        "blog list",
-        "single post",
-        "featured articles",
-      ],
+      subMenus: ["blog default", "single post", "featured articles"],
     },
     {
       title: "lookbook",
-      subMenus: [
-        "lookbook grid",
-        "lookbook slider",
-        "lookbook masonry",
-        "seasonal lookbook",
-        "editor picks",
-      ],
+      subMenus: ["lookbook grid", "lookbook masonry", "editor picks"],
     },
     {
       title: "pages",
@@ -211,7 +177,7 @@ const Navbar = () => {
                         key={index}
                         className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
                       >
-                        {item}
+                        <Link href={"/"}>{item}</Link>
                       </li>
                     ))}
                   </ul>
@@ -244,7 +210,6 @@ const Navbar = () => {
               title={"journal"}
               className={" hover:before:w-40"}
             >
-              {" "}
               <div
                 className={`top-[200%] left-0 -translate-x-1/2 lg:translate-x-0  px-3 pb-10 absolute z-50 flex  gap-20 xl:gap-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 bg-white`}
               >
@@ -258,7 +223,7 @@ const Navbar = () => {
                         key={index}
                         className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
                       >
-                        {item}
+                        <Link href={"/"}>{item}</Link>
                       </li>
                     ))}
                   </ul>
@@ -282,9 +247,9 @@ const Navbar = () => {
                     {item.subMenus.map((item, index) => (
                       <li
                         key={index}
-                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
+                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline  "
                       >
-                        {item}
+                        <Link href={"/"}>{item}</Link>
                       </li>
                     ))}
                   </ul>
@@ -312,15 +277,15 @@ const Navbar = () => {
         </div>
       </Container>
 
-      <div className="mobile sm:hidden absolute top-16 h-[calc(100vh-4rem)] w-full px-2 z-999">
-        <CustomBtn label="search products..." name={"search"}>
+      <div className="mobile sm:hidden absolute top-16 h-[calc(100vh-4rem)] w-full px-2 z-999 bg-white flex flex-col gap-y-4">
+        <CustomInput label="search products..." name={"search"}>
           <Search className="absolute right-0 top-1/2 -translate-1/2" />
-        </CustomBtn>
+        </CustomInput>
         <Accordion
           type="single"
           collapsible
           defaultValue="home"
-          className="max-w-lg gap-0"
+          className=" gap-0"
         >
           {mobileMenus.map((menu) => (
             <AccordionItem
@@ -328,19 +293,21 @@ const Navbar = () => {
               value={menu.title}
               className={"border-b-0!"}
             >
-              <AccordionTrigger className="capitalize focus:custom-underline text-primary text-xl font-medium ">
+              <AccordionTrigger className="capitalize  text-primary text-xl font-medium ">
                 {menu.title}
               </AccordionTrigger>
 
               {menu.subMenus && (
                 <AccordionContent>
-                  <ul className="flex flex-col  border-b border-secondary/50 pb-3">
+                  <ul className="flex flex-col gap-2  border-b border-secondary/50 pb-3">
                     {menu.subMenus.map((subMenu, index) => (
                       <li
                         key={index}
-                        className="text-primary cursor-pointer w-full capitalize custom-underline"
+                        className="text-primary cursor-pointer w-full capitalize "
                       >
-                        {subMenu}
+                        <Link href={"/"} className="no-underline!">
+                          {subMenu}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -349,6 +316,17 @@ const Navbar = () => {
             </AccordionItem>
           ))}
         </Accordion>
+        <div className="flex-1 flex flex-col gap-y-3.5 justify-end">
+          <div className="myAccount flex items-center gap-x-3.5">
+            <User />{" "}
+            <h1 className="text-primary text-sm font-medium">my account</h1>
+          </div>
+          <div className="language"></div>
+          <div className="currency"></div>
+          <div className="social">
+            <FaFacebookF />
+          </div>
+        </div>
       </div>
     </nav>
   );
