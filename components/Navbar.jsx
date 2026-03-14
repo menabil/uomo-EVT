@@ -184,8 +184,8 @@ const Navbar = () => {
               className={"static! hover:before:w-0!"}
             >
               <div
-                className={`bottom-0 w-full px-3 pb-10 translate-y-full left-1/2 -translate-x-1/2  absolute z-50 flex justify-between  xl:gap-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 bg-white`}
-              >
+                className={`bottom-0 w-full px-3 pb-10 translate-y-full left-1/2 -translate-x-1/2  absolute z-50  opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 bg-white`}
+              ><Container className="flex justify-between  xl:gap-44 ">
                 {subMenusHome.map((item, index) => (
                   <ul key={index} className="w-max flex flex-col gap-y-2">
                     <p className="font-medium text-sm text-secondary uppercase  ">
@@ -220,6 +220,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                 </div>
+                </Container>
               </div>
             </NavLinks>
             <NavLinks link={"/"} title={"shop"} />
@@ -280,6 +281,13 @@ const Navbar = () => {
         <div className="btns flex gap-3 md:gap-5 xl:gap-x-7.5 text-2xl">
           <div className="hover:cursor-pointer hidden sm:block">
             <CiSearch />
+            <div className="absolute w-full py-16 top-full left-1/2 -translate-x-1/2 bg-white" >
+              <Container><p className="text-sm text-secondary uppercase">what are you looking for ?</p>
+              <div className="input">
+                <input type="text" name="search" id="search" placeholder="Search" className="w-full border-b border-secondary outline-0 placeholder:text-sm text-sm py-2" />
+              </div>
+              </Container>
+            </div>
           </div>
           <Link href={"/dashboard"} className="hover:cursor-pointer hidden sm:block">
             <CiUser />
