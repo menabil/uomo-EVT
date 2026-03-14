@@ -281,9 +281,9 @@ const Navbar = () => {
           <div className="hover:cursor-pointer hidden sm:block">
             <CiSearch />
           </div>
-          <div className="hover:cursor-pointer hidden sm:block">
+          <Link href={"/dashboard"} className="hover:cursor-pointer hidden sm:block">
             <CiUser />
-          </div>
+          </Link>
           <div className="hover:cursor-pointer hidden sm:block">
             <CiHeart />
           </div>
@@ -300,7 +300,7 @@ const Navbar = () => {
       </Container>
 
       <div
-        className={`mobile sm:hidden absolute top-12 h-[calc(100dvh-3rem)] w-full px-5 z-999 bg-white flex flex-col pb-5 
+        className={`mobile sm:hidden absolute top-12 min-h-[calc(100dvh-3rem)] w-full px-5 z-999 bg-white flex flex-col pb-5 
       ${open ? "translate-x-0" : "-translate-x-full"} transition-all duration-300`}
       >
         <CustomInput label="search products..." name={"search"}>
