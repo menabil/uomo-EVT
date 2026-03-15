@@ -1,14 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import img_1 from '@/public/images/Image.png'
+import Header from '../Header'
 
 const Category = () => {
   return (
     <>
       <section className="max-w-7xl mx-auto px-6">
-         <h1 className="text-2xl md:text-4xl text-center font-semibold mt-20 mb-10">
-         Shop By <span className="font-bold">Shape</span>
-         </h1>
+         <Header text="SHOP BY SHAPE"/>
          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
          <div>
          <Image src={img_1} alt='1' className="mx-auto"/>
