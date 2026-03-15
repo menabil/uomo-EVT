@@ -8,7 +8,6 @@ export default function AccountDetailsPage() {
     firstName: "",
     lastName: "",
     displayName: "",
- 
     currentPassword: "",
     newPassword: "",
     confirmPassword: "",
@@ -18,9 +17,7 @@ export default function AccountDetailsPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log("Saving changes...", form);
-  };
+
 
   return (
     <div className="w-full">
@@ -99,8 +96,8 @@ export default function AccountDetailsPage() {
 
     
       <button
-        onClick={handleSubmit}
-        className="bg-gray-900 text-white text-xs font-bold tracking-widest uppercase px-10 py-4 hover:bg-red-600 transition-colors duration-200"
+ 
+        className="bg-gray-900 text-white text-xs font-bold tracking-widest uppercase px-10 py-4 "
       >
         Save Changes
       </button>
