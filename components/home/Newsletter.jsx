@@ -16,7 +16,7 @@ const Newsletter = () => {
           </div>
              </div>
              <div className="relative">
-          <Image srcNclassName={I_1} alt='2' class="w-full"/>
+          <Image src={I_1} alt='2' class="w-full"/>
           <div className="absolute bottom-10 left-10 text-white">
           <h3 className="text-sm">COLLECTION</h3>
           <h1 className="text-xl font-bold mb-4">SUNGLASSES WOMEN'S</h1>
