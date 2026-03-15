@@ -35,7 +35,7 @@ const page = () => {
             {/* Left Side: Images */}
             <div className="flex flex-col-reverse xl:flex-row gap-2.5 ">
               <div className="flex xl:flex-col gap-2.5 overflow-x-auto lg:overflow-visible ">
-                <div className="min-w-[80px] xl:w-auto">
+                <div className="min-w-20 xl:w-auto">
                   <Image
                     src={"/images/shop.png"}
                     alt="vvvv"
@@ -43,7 +43,7 @@ const page = () => {
                     height={80}
                   />
                 </div>
-                <div className="min-w-[80px] xl:w-auto">
+                <div className="min-w-20 xl:w-auto">
                   <Image
                     src={"/images/shop.png"}
                     alt="vvvv"
@@ -51,7 +51,7 @@ const page = () => {
                     height={80}
                   />
                 </div>
-                <div className="min-w-[80px] xl:w-auto">
+                <div className="min-w-20 xl:w-auto">
                   <Image
                     src={"/images/shop.png"}
                     alt="vvvv"
@@ -59,7 +59,7 @@ const page = () => {
                     height={80}
                   />
                 </div>
-                <div className="min-w-[80px] xl:w-auto">
+                <div className="min-w-20 xl:w-auto">
                   <Image
                     src={"/images/shop.png"}
                     alt="vvvv"
@@ -70,7 +70,7 @@ const page = () => {
               </div>
 
               {/* Main Slider */}
-              <div className="w-full xl:w-[570px] relative group">
+              <div className="w-full xl:w-142.5 relative group">
                 <Swiper
                   modules={[Navigation]}
                   navigation={{
@@ -202,7 +202,7 @@ const page = () => {
 
         {/* vvvvvvvvvvvvvvv */}
         <div className="w-full">
-          <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-x-10 xl:gap-x-19 gap-y-6 sm:gap-y-0 texts_16_medium text-secondary">
+          <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-x-10 xl:gap-x-19 gap-y-6 sm:gap-y-0 text-base font-medium text-secondary">
             {/* DESCRIPTION Button */}
             <button
               onClick={() => setActiveTab("description")}
@@ -265,7 +265,7 @@ const page = () => {
                   </div>
                   <div className="mt-9.75 flex flex-col md:flex-row gap-y-8 md:gap-x-20 xl:gap-x-37.5">
                     <div className="">
-                      <h4 className="texts_16_medium text-primary">
+                      <h4 className="text-base font-medium text-primary">
                         Why choose product?
                       </h4>
                       <div className="mt-6 lg:mt-10.75 space-y-3 lg:space-y-0">
@@ -291,7 +291,7 @@ const page = () => {
                       </div>
                     </div>
                     <div className="">
-                      <h4 className="texts_16_medium text-primary">
+                      <h4 className="text-base font-medium text-primary">
                         Sample Number List
                       </h4>
                       <div className="mt-6 lg:mt-10.75 space-y-3 lg:space-y-0">
@@ -314,7 +314,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <h4 className="texts_16_medium text-primary pt-9.25">
+                  <h4 className="text-base font-medium text-primary pt-9.25">
                     Lining
                   </h4>
                   <p className="text-sm text-primary pb-4 lg:pb-0">
@@ -326,31 +326,27 @@ const page = () => {
               {/* ADDITIONAL INFORMATION CONTENT */}
               {activeTab === "additional" && (
                 <div className="flex flex-row gap-x-10 md:gap-x-16 lg:gap-x-22.5 my-8 lg:my-12.5 animate-fadeIn">
-                  <div className="w-[100px] lg:w-[82px] space-y-[20px] lg:space-y-[31px]">
-                    <h4 className="texts_16_medium text-primary whitespace-nowrap">
+                  <div className="w-25 lg:w-20.5 space-y-5 lg:space-y-7.75">
+                    <h4 className="text-base font-medium text-primary whitespace-nowrap">
                       Weight
                     </h4>
-                    <h4 className="texts_16_medium text-primary whitespace-nowrap">
+                    <h4 className="text-base font-medium text-primary whitespace-nowrap">
                       Dimensions
                     </h4>
-                    <h4 className="texts_16_medium text-primary whitespace-nowrap">
+                    <h4 className="text-base font-medium text-primary whitespace-nowrap">
                       Size
                     </h4>
-                    <h4 className="texts_16_medium text-primary whitespace-nowrap">
+                    <h4 className="text-base font-medium text-primary whitespace-nowrap">
                       Color
                     </h4>
-                    <h4 className="texts_16_medium text-primary whitespace-nowrap">
+                    <h4 className="text-base font-medium text-primary whitespace-nowrap">
                       Storage
                     </h4>
                   </div>
-                  <div className="space-y-[20px] lg:space-y-[31px]">
+                  <div className="space-y-5 lg:space-y-7.75">
                     <h5 className="text-sm text-primary">1.25 kg</h5>
-                    <h5 className="text-sm text-primary">
-                      90 x 60 x 90 cm
-                    </h5>
-                    <h5 className="text-sm text-primary">
-                      XS, S, M, L, XL
-                    </h5>
+                    <h5 className="text-sm text-primary">90 x 60 x 90 cm</h5>
+                    <h5 className="text-sm text-primary">XS, S, M, L, XL</h5>
                     <h5 className="text-sm text-primary">
                       Black, Orange, White
                     </h5>
@@ -366,7 +362,9 @@ const page = () => {
                 <div className="animate-fadeIn space-y-8">
                   {/* Review 1 */}
                   <div className="border-b border-footer pb-5.75">
-                    <h4 className="texts_16_medium text-primary">Reviews</h4>
+                    <h4 className="text-base font-medium text-primary">
+                      Reviews
+                    </h4>
                     <div className="flex gap-x-4 md:gap-x-7.5 items-start md:items-center mt-6.5">
                       <div className="shrink-0 w-12 md:w-auto">
                         <Image
@@ -440,7 +438,7 @@ const page = () => {
         {/* vvvvvvvvvvvvvvv */}
         <div className=" mt-7 lg:mt-13.5">
           <div className="">
-            <h3 className="texts_18_medium text-primary">
+            <h3 className="text-lg font-medium text-primary">
               Be the first to review “Message Cotton T-Shirt”
             </h3>
             <h4 className="text-sm text-primary py-3 lg:pb-7.5">
@@ -448,10 +446,8 @@ const page = () => {
               marked *
             </h4>
 
-            <div className="flex flex-col lg:flex-row lg:items-center gap-x-2 lg:mb-[26px]">
-              <span className="text-sm text-primary">
-                Your rating *
-              </span>
+            <div className="flex flex-col lg:flex-row lg:items-center gap-x-2 lg:mb-6.5">
+              <span className="text-sm text-primary">Your rating *</span>
               <div className="flex  text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <span key={i}>★</span>
@@ -505,7 +501,7 @@ const page = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="bg-primary text-white px-10 lg:px-0 texts_14_medium h-12 lg:w-70 lg:h-15 cursor-pointer"
+                className="bg-primary text-white px-10 lg:px-0 text-sm font-medium h-12 lg:w-70 lg:h-15 cursor-pointer"
               >
                 SUBMIT
               </button>
