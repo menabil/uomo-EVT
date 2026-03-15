@@ -37,6 +37,7 @@ export const NavLinks = ({ title, link, className, children }) => {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   const mobileMenus = [
     {
@@ -184,42 +185,44 @@ const Navbar = () => {
               className={"static! hover:before:w-0!"}
             >
               <div
-                className={`bottom-0 w-full px-3 pb-10 translate-y-full left-1/2 -translate-x-1/2  absolute z-50 flex justify-between  xl:gap-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 bg-white`}
+                className={`bottom-0 w-full px-3 pb-10 translate-y-full left-1/2 -translate-x-1/2  absolute z-50  opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 bg-white`}
               >
-                {subMenusHome.map((item, index) => (
-                  <ul key={index} className="w-max flex flex-col gap-y-2">
-                    <p className="font-medium text-sm text-secondary uppercase  ">
-                      {item.title}
-                    </p>
-                    {item.subMenus.map((item, index) => (
-                      <li
-                        key={index}
-                        className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
+                <Container className="flex justify-between  xl:gap-44 ">
+                  {subMenusHome.map((item, index) => (
+                    <ul key={index} className="w-max flex flex-col gap-y-2">
+                      <p className="font-medium text-sm text-secondary uppercase  ">
+                        {item.title}
+                      </p>
+                      {item.subMenus.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-primary leading-normal cursor-pointer w-fit h-auto text-xs md:text-sm capitalize relative custom-underline "
+                        >
+                          <Link href={"/"}>{item}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ))}
+                  <div className="card hidden sm:block  relative w-60 lg:w-100 aspect-square xl:aspect-41/45">
+                    <Image
+                      className="absolute -z-10"
+                      fill
+                      src={placeholder}
+                      alt="placeholder"
+                    />
+                    <div className="text h-full w-full p-7.5 flex flex-col items-start justify-end gap-y-2  ">
+                      <h2 className="text-2xl font-medium text-primary">
+                        new <br /> horizon
+                      </h2>
+                      <Link
+                        href={"/"}
+                        className="text-primary  cursor-pointer w-fit text-sm capitalize relative custom-underline "
                       >
-                        <Link href={"/"}>{item}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                ))}
-                <div className="card hidden sm:block  relative w-60 lg:w-100 aspect-square xl:aspect-41/45">
-                  <Image
-                    className="absolute -z-10"
-                    fill
-                    src={placeholder}
-                    alt="placeholder"
-                  />
-                  <div className="text h-full w-full p-7.5 flex flex-col items-start justify-end gap-y-2  ">
-                    <h2 className="text-2xl font-medium text-primary">
-                      new <br /> horizon
-                    </h2>
-                    <Link
-                      href={"/"}
-                      className="text-primary  cursor-pointer w-fit text-sm capitalize relative custom-underline "
-                    >
-                      shop now
-                    </Link>
+                        shop now
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                </Container>
               </div>
             </NavLinks>
             <NavLinks link={"/"} title={"shop"} />
@@ -279,11 +282,32 @@ const Navbar = () => {
         </div>
         <div className="btns flex gap-3 md:gap-5 xl:gap-x-7.5 text-2xl">
           <div className="hover:cursor-pointer hidden sm:block">
-            <CiSearch />
+            <div onClick={() => setShowSearch(!showSearch)} className="">
+              <CiSearch />
+            </div>
+            <div className={``}>
+              <Container>
+                <p className="text-sm text-secondary uppercase">
+                  what are you looking for ?
+                </p>
+                <div className="input">
+                  <input
+                    type="text"
+                    name="search"
+                    id="search"
+                    placeholder="Search"
+                    className="w-full border-b border-secondary outline-0 placeholder:text-sm text-sm py-2"
+                  />
+                </div>
+              </Container>
+            </div>
           </div>
-          <div className="hover:cursor-pointer hidden sm:block">
+          <Link
+            href={"/dashboard"}
+            className="hover:cursor-pointer hidden sm:block"
+          >
             <CiUser />
-          </div>
+          </Link>
           <div className="hover:cursor-pointer hidden sm:block">
             <CiHeart />
           </div>
@@ -300,7 +324,7 @@ const Navbar = () => {
       </Container>
 
       <div
-        className={`mobile sm:hidden absolute top-12 h-[calc(100dvh-3rem)] w-full px-5 z-999 bg-white flex flex-col pb-5 
+        className={`mobile sm:hidden absolute top-12 min-h-[calc(100dvh-3rem)] w-full px-5 z-999 bg-white flex flex-col pb-5 
       ${open ? "translate-x-0" : "-translate-x-full"} transition-all duration-300`}
       >
         <CustomInput label="search products..." name={"search"}>
@@ -343,7 +367,7 @@ const Navbar = () => {
         </Accordion>
         <div className="flex-1 flex flex-col gap-y-3.5 justify-end">
           <div className="myAccount flex items-center gap-x-3.5 uppercase">
-            <User />{" "}
+            <User />
             <h1 className="text-primary text-sm font-medium">my account</h1>
           </div>
           <div className="language flex items-center gap-x-7 capitalize">

@@ -5,7 +5,7 @@ import Banner1 from "@/public/images/about-bannar.png";
 const Banner = () => {
   return (
     <>
-      <section className="relative">
+      <section className="relative ">
          <Image src={Banner1} alt="Banner" className="w-full h-[400px] md:h-[600px] object-cover"/>
          <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-20">
          <h3 className="text-white text-xs md:text-sm font-semibold mb-4">
