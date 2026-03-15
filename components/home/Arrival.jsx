@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import img1 from '@/public/images/img1.png'
+import img1 from '@/public/images/MP_1.png'
 import Header from '../Header'
 
 const Arrival = () => {
